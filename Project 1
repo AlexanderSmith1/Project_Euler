@@ -1,0 +1,23 @@
+def collatz(n):
+  amount = 1
+  while n != 1:
+    amount += 1
+    if n%2 != 0:
+      n = 3*n +1
+    else:
+      n = n/2
+  return amount
+
+
+num = 0
+cnum = 0
+print("here")
+
+for x in range(1,1_000_000):
+  if int(collatz(x))>cnum:
+    num = x
+    cnum = collatz(x)
+    print(num)
+print(num)
+
+print("finished")
